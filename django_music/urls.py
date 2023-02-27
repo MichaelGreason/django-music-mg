@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from albums import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('__debug__/', include('debug_toolbar.urls')),
-
+    path('', views.list_albums, name="home")
+    # where user visits, what view is called, name used within
+    # the app to refer to this url/ page
 ]
