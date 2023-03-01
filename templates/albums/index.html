@@ -11,5 +11,6 @@
     {% for album in albums %}
     <p>{{ album }}</p>
     {% endfor %}
+    <a href="{% url 'add_album' %}">Add a new album</a>
 </body>
 </html>
