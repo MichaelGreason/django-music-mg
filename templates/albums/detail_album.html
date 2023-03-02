@@ -1,17 +1,19 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Details</title>
+    {% block title %}<title>Details</title>{%endblock%}
 </head>
 <body>
+    {% block content %}
     <h2>{{album.artist}}</h2>
     <h2>{{album.title}}</h2>
     <p>{{album.genre}}</p>
     <a href="{% url 'edit-album' album.pk %}">Edit this entry</a>
     <a href="{% url 'delete-album' album.pk %}">Delete this entry</a>
-
+{% endblock %}
 </body>
 </html>

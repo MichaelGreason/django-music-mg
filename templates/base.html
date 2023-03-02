@@ -1,6 +1,5 @@
-{% extends 'base.html' %}
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,17 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="{% static 'CSS/django_music.css' %}">
-   {% block title %}<title>Albums</title>{% endblock %}
+    {% block title %}<title>Django Music</title>{% endblock %}
 </head>
 <body>
     {% block content %}
-    <h1>Collection</h1>
-    <article>
-    {% for album in albums %}
-    <p class='artist' ><a href="{% url 'detail-album' album.pk %}">{{ album }}</a></p>
-    {% endfor %}
-    <button><a href="{% url 'add_album' %}">Add a new album</a></button>
-    </article>
-    {% endblock %}
+    {% endblock%}
 </body>
 </html>
