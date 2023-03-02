@@ -10,6 +10,8 @@
     <h2>{{albums.artist}}</h2>
     <h2>{{albums.title}}</h2>
     <p>{{albums.genre}}</p>
+    <a href="{% url 'edit-album' album.pk %}">Edit this entry</a>
+    <a href="{% url 'delete-album' album.pk %}">Delete this entry</a>
 
 </body>
 </html>

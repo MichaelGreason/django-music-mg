@@ -12,7 +12,7 @@
 <body>
     <h1>Here are all of my albums</h1>
     {% for album in albums %}
-    <p>{{ album }}</p>
+    <p><a href="{% url 'detail-album' album.pk %}">{{ album }}</a></p>
     {% endfor %}
     <button><a href="{% url 'add_album' %}">Add a new album</a></button>
 </body>
