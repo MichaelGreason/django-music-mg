@@ -18,3 +18,7 @@ article {
     display: flex;
     justify-content: space-evenly;
 }
+
+img {
+    max-width: 200px;
+}

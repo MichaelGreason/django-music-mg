@@ -9,11 +9,15 @@
 </head>
 <body>
     {% block content %}
+    <h1 class='is-size-3'>A Closer look</h1>
     <h2>{{album.artist}}</h2>
     <h2>{{album.title}}</h2>
     <p>{{album.genre}}</p>
-    <a href="{% url 'edit-album' album.pk %}">Edit this entry</a>
-    <a href="{% url 'delete-album' album.pk %}">Delete this entry</a>
+    {% if album.image %}
+    <img src="{{album.image.url}}" alt="album cover">
+    {% endif %}
+    <button class='button is-primary'><a href="{% url 'edit-album' album.pk %}">Edit this entry</a></button>
+    <button class='button is-primary'><a href="{% url 'delete-album' album.pk %}">Delete this entry</a></button>
 {% endblock %}
 </body>
 </html>

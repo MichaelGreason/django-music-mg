@@ -12,12 +12,12 @@
 </head>
 <body>
     {% block content %}
-    <h1>Collection</h1>
+    <h1 class='is-size-3'>Collection</h1>
     <article>
     {% for album in albums %}
     <p class='artist' ><a href="{% url 'detail-album' album.pk %}">{{ album }}</a></p>
     {% endfor %}
-    <button><a href="{% url 'add_album' %}">Add a new album</a></button>
+    <button class='button is-primary'><a href="{% url 'add_album' %}">Add a new album</a></button>
     </article>
     {% endblock %}
 </body>

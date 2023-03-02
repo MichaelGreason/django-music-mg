@@ -13,9 +13,14 @@ def list_albums(request):
     # pass data to the template using the context dictionary
 
 
+# def get_album_by_priority(request, priority):
+#     albums = Album.objects.filter(priority=priority)
+#     return render(request, 'albums/index.html', {'albums': albums})
+
+
 def add_album(request):
     if request.method == 'POST':
-        album_form = AlbumForm(request.POST)
+        album_form = AlbumForm(request.POST, request.FILES)
         if album_form.is_valid():
             album_form.save()
             return redirect('home')
@@ -31,7 +36,7 @@ def detail_album(request, pk):
 def edit_album(request, pk):
     albums = get_object_or_404(Album, pk=pk)
     if request.method == 'POST':
-        album_form = AlbumForm(request.POST, instance=albums)
+        album_form = AlbumForm(request.POST, request.FILES, instance=albums)
         if album_form.is_valid():
             album_form.save()
             return redirect('home')
