@@ -24,8 +24,8 @@ def add_album(request):
 
 
 def detail_album(request, pk):
-    albums = get_object_or_404(Album, pk=pk)
-    return render(request, 'albums/detail_album.html', {'albums': albums})
+    album = get_object_or_404(Album, pk=pk)
+    return render(request, 'albums/detail_album.html', {'album': album})
 
 
 def edit_album(request, pk):

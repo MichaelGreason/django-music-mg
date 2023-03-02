@@ -7,9 +7,9 @@
     <title>Details</title>
 </head>
 <body>
-    <h2>{{albums.artist}}</h2>
-    <h2>{{albums.title}}</h2>
-    <p>{{albums.genre}}</p>
+    <h2>{{album.artist}}</h2>
+    <h2>{{album.title}}</h2>
+    <p>{{album.genre}}</p>
     <a href="{% url 'edit-album' album.pk %}">Edit this entry</a>
     <a href="{% url 'delete-album' album.pk %}">Delete this entry</a>
 
